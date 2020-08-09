@@ -2,3 +2,18 @@ server:
   port: 8050
   servlet:
     context-path: /eureka
+
+eureka:
+  #服务注册中心实例的主机名
+  instance:
+    hostname: localhost
+
+  client:
+    # 默认情况下，eureka server同时也是eureka client，用于相互注册形成高可用eureka服务。
+    # 单点时，如果registerWithEureka配置为true，则eureka server会报错Cannot execute request on any known server
+    register-with-eureka: false # 不向服务注册中心注册自己
+    fetch-registry: false # 表示自己就是服务注册中心，我的职责就是维护服务实例，而不是去检索服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+

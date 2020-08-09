@@ -2,3 +2,12 @@ server:
   port: 8080
   servlet:
     context-path: /user
+
+spring:
+  application:
+    name: user
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8050/eureka/ #服务注册中心地址
