@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="power1" />
+        <module name="user" />
+        <module name="eureka3000" />
+        <module name="order" />
+        <module name="power" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="xxx" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka3000" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="power" options="-parameters" />
+      <module name="power1" options="-parameters" />
+      <module name="user" options="-parameters" />
+      <module name="xxx" options="" />
+    </option>
+  </component>
+</project>
