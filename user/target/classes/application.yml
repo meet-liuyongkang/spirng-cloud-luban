@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8010
   servlet:
     context-path: /user
 
@@ -7,7 +7,7 @@ spring:
   application:
     name: user
 
-#eureka:
-#  client:
-#    service-url:
-#      defaultZone: http://localhost:8050/eureka/ #服务注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8050/actuator/ #服务注册中心地址

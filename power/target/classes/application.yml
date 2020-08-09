@@ -2,3 +2,7 @@ server:
   port: 8020
   servlet:
     context-path: /power
+
+eureka:
+  client:
+    service-url: http://192.168.0.104:8050/eureka/
