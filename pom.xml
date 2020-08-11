@@ -9,49 +9,20 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <!--    统一管理jar包版本-->
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.coompiler.targer>1.8</maven.coompiler.targer>
-        <java.version>1.8</java.version>
-        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
-    </properties>
-
     <modules>
         <module>eureka3000</module>
         <module>user</module>
         <module>power</module>
         <module>power1</module>
         <module>order</module>
+        <module>eureka3001</module>
+        <module>eureka3002</module>
     </modules>
 
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>2.2.2.RELEASE</version>
+        <version>2.0.2.RELEASE</version>
     </parent>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-                <version>2.2.2.RELEASE</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-
 
 </project>
