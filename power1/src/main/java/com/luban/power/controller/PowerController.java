@@ -21,4 +21,37 @@ public class PowerController {
         return map;
     }
 
+    @RequestMapping("powerError")
+    public Map<String,String> powerError(){
+        if(1 == 1){
+            throw new RuntimeException();
+        }
+        Map map = new HashMap<String,String>();
+        map.put("success","powerError!");
+        return map;
+    }
+
+    @RequestMapping("powerTimeOut")
+    public Map<String,String> powerTimeOut(){
+        try {
+            System.out.println("powerTimeOut111111111111111被调用了");
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Map map = new HashMap<String,String>();
+        map.put("success","powerTimeOut!");
+        return map;
+    }
+
+    @RequestMapping("powerBatchFallback")
+    public Map<String,String> powerBatchFallback(){
+        if(1 == 1){
+            throw new RuntimeException();
+        }
+        Map map = new HashMap<String,String>();
+        map.put("success","powerBatchFallback");
+        return map;
+    }
+
 }

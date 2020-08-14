@@ -2,7 +2,8 @@ package com.luban.user.config;
 
 import com.luban.user.service.UserService;
 import com.luban.user.service.impl.UserServiceImpl;
-import com.netflix.loadbalancer.RandomRule;
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,8 +29,8 @@ public class AppConfig {
     }
 
     @Bean
-    public RandomRule randomRule(){
-        return new RandomRule();
+    public IRule iRule(){
+        return new RoundRobinRule();
     }
 
 }

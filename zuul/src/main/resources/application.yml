@@ -1,0 +1,21 @@
+server:
+  port: 9000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:3000/eureka/
+  instance:
+    instance-id: zuul-0
+    prefer-ip-address: true
+
+spring:
+  application:
+    name: zuul
+
+
+zuul:
+  routes:
+    client-user: /user/**
+    server-power: /power/**
+  ignored-services: "*" #屏蔽所有直接通过服务名发给服务的请求

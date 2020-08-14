@@ -14,3 +14,40 @@ eureka:
 spring:
   application:
     name: client-user #此实例注册到eureka服务端的name
+  zipkin:
+    base-url: http://localhost:8090 #指定zipkin服务器地址
+  sleuth:
+    sampler:
+      probability: 1.0 #request采样的数量 默认是0.1 也即是10%  顾名思义 采取10%的请求数据  因为在分布式系统中，数据量可能会非常大，因此采样非常重要。我们示例数据少最好配置为1全采样
+
+
+feign:
+  hystrix:
+    enabled: true #配置feign开启hystrix支持，默认关闭
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000 #超时时间，默认1000，单位：ms
+#      circuitBreaker:
+#        requestVolumeThreshold: 20 #当在配置时间窗口内达到此数量的失败后，进行短路。默认20个。注意，是整个集群熔断，而不是某一个服务熔断
+#        sleepWindowInMilliseconds: 5000 #短路多久以后开始尝试是否恢复，默认5000，单位：ms
+#  threadpool:
+#    default:
+#      coreSize: 10 #核心线程数量，默认为10
+#      maxQueueSize: 2 #最大排队长度。默认-1，使用SynchronousQueue。其他值则使用 LinkedBlockingQueue。如果要从-1换成其他值则需重启，即该值不能动态调整，若要动态调整，需要使用到下边这个配置
+#      queueSizeRejectionThreshold: 2  #排队线程数量阈值，默认为5，达到时拒绝，如果配置了该选项，队列的大小就是此值。注意：如果maxQueueSize=-1的话，则该选项不起作用
+#    power:
+#      coreSize: 2
+#      maxQueueSize: 2 #最大排队长度
+
+#Hystrix开放所有接口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

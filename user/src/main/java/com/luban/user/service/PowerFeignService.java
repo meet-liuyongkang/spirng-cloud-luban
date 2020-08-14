@@ -1,5 +1,6 @@
 package com.luban.user.service;
 
+import com.luban.user.service.impl.PowerFeignServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -8,10 +9,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @description
  * @date 2020/8/11 5:34 下午
  */
-@FeignClient(value = "SERVER-POWER")
+@FeignClient(value = "SERVER-POWER", fallback = PowerFeignServiceImpl.class)
 public interface PowerFeignService {
 
     @RequestMapping("/powerIndex")
     Object getPower();
+
+    @RequestMapping("/powerError")
+    Object powerError();
+
+    @RequestMapping("/powerTimeOut")
+    Object powerTimeOut();
+
+    @RequestMapping("/powerBatchFallback")
+    Object powerBatchFallback();
 
 }

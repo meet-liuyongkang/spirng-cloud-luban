@@ -21,4 +21,26 @@ public class PowerController {
         return map;
     }
 
+    @RequestMapping("powerError")
+    public Map<String,String> powerError(){
+        Map map = new HashMap<String,String>();
+        map.put("success","powerError");
+        return map;
+    }
+
+    @RequestMapping("powerTimeOut")
+    public Map<String,String> powerTimeOut(){
+        System.out.println("powerTimeOut   00000000000000");
+        Map map = new HashMap<String,String>();
+        map.put("success","powerTimeOut");
+        return map;
+    }
+
+    @RequestMapping("powerBatchFallback")
+    public Map<String,String> powerBatchFallback(){
+        Map map = new HashMap<String,String>();
+        map.put("success","powerBatchFallback");
+        return map;
+    }
+
 }

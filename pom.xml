@@ -17,6 +17,11 @@
         <module>order</module>
         <module>eureka3001</module>
         <module>eureka3002</module>
+        <module>zuul</module>
+        <module>hystrix-dashboard</module>
+        <module>config-server</module>
+        <module>config-client</module>
+        <module>zipkin-server</module>
     </modules>
 
     <parent>

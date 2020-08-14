@@ -7,12 +7,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="user" />
+        <module name="zuul" />
+        <module name="config-server" />
         <module name="power1" />
         <module name="order" />
+        <module name="hystrix-dashboard" />
         <module name="eureka3002" />
         <module name="eureka3001" />
         <module name="eureka3000" />
+        <module name="config-client" />
         <module name="power" />
+        <module name="zipkin-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,14 +26,19 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-client" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="eureka3000" options="-parameters" />
       <module name="eureka3001" options="-parameters" />
       <module name="eureka3002" options="-parameters" />
+      <module name="hystrix-dashboard" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="power" options="-parameters" />
       <module name="power1" options="-parameters" />
       <module name="user" options="-parameters" />
       <module name="xxx" options="" />
+      <module name="zipkin-server" options="-parameters" />
+      <module name="zuul" options="-parameters" />
     </option>
   </component>
 </project>
